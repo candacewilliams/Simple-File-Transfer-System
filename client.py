@@ -1,5 +1,6 @@
 # Echo client program
 import socket
+import time
 import sys
 import library
 
@@ -18,8 +19,11 @@ def main(conn, addr):
     s = CreateClientSocket(conn, addr)
 
     with s:
+        a = time.time()
         s.sendall(b'resource.txt')
         data = s.recv(1024)
+        b = time.time()
+        print(b-a)
         contents = data.decode()
         
         if(contents == "File Not Found\n"):
