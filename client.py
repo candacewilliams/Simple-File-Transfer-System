@@ -23,7 +23,7 @@ def main(conn, addr):
         s.sendall(b'resource.txt')
         data = s.recv(1024)
         b = time.time()
-        print(b-a)
+        print("Roundtrip Time (seconds): ", b-a)
         contents = data.decode()
         
         if(contents == "File Not Found\n"):
