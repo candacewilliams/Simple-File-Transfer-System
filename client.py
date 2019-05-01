@@ -4,10 +4,6 @@ import time
 import sys
 import library
 
-#HOST = 'fd5f:df5:bf3f:0:3fa8:a486:a193:f7e2'    # The remote host
-#PORT = 7777              # The same port as used by the server
-
-
 def CreateClientSocket(server_addr, port):
     sockaddr = library.GetIPv6Addr(server_addr, port)
     print(sockaddr)
